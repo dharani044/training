@@ -1,0 +1,280 @@
+*
+{
+	margin: 0 auto;
+	padding: 0px;
+	text-decoration: none;
+	list-style-type: none;
+}
+@font-face
+{
+font-family: myfont;
+    src: url(fontie/MyriadPro-Bold_gdi.woff);
+}
+#layout
+{
+width: 100%;
+height: 1000px;
+background-color: gainsboro;
+}
+.container
+{
+	width: 930px;
+	height: 990px;
+	padding: 0px;
+	background-color: white;
+}
+.wrapper
+{
+	padding: 20px;
+	background-color: inherit;
+}
+.logo
+{
+	margin-right: 5%;
+	float: left;
+	background-color: none;
+}
+.menu ul li
+{
+	display: block;
+}
+.menu ul li a
+{
+	text-align: center;
+	left: 20%;
+	width: 11%;
+	padding-top: 0.65%;
+	padding-left: 0.7%;
+	float: left;
+	right: 1% solid white;
+	height: 4%;
+	font-family: myfont;
+	color: gray;
+	background-image: url("images/topmenu-normal.jpg");
+	background-repeat: no-repeat;
+	background-size: 103px 32px;
+}
+.menu ul li a:hover
+{
+	background-image: url("images/topmenu-hover.jpg");
+	background-repeat: no-repeat;
+	color: white;
+}
+.content1
+{
+	margin-top: 8%;
+	margin-bottom: 3%;
+	width: 100%;
+	word-spacing: 3px;
+}
+.content1 p
+{
+	text-align: justify;
+	color: gray;
+	font-family: myfont;
+	font-style: normal;
+	font-size: large;	
+}
+.content2
+{
+	width: 100%;
+	word-spacing: 3px;
+}
+.content2 p
+{
+	text-align: justify;
+	color: gray;
+	font-family: myfont;
+	font-style: normal;
+	font-size: large;	
+}
+.readmore 
+{
+	text-decoration: none;
+	padding-left: 3px;
+	padding-right: 2%;
+	height: 3.2%;
+	float: right;
+	font-family: myfont;
+	text-align: center;
+	font-size: small;
+	background-image: url('images/more-bg.gif');
+	background-repeat: no-repeat;
+}
+.left-content
+{
+	float: left;
+	width:27%;
+	background-color: none;
+}
+.left 
+{
+	border-bottom: 1px dashed;
+	border-color: gray;
+}
+.left-heading
+{
+	margin-top: 3%;	
+	float: left;
+	margin-bottom: 1%;	
+	border-color: #555555;
+	/*border-bottom: dashed;
+	border-width: 0.1%;*/
+}
+.left-heading span
+{
+	font-family: myfont;
+	font-size: small;
+	color: #778899;
+	font-weight: bold;
+}
+.left-heading img
+{
+	top: 2%;
+}
+#icon
+{
+	margin-left: 5%;
+	margin-top: 2.3%;
+	/*border-bottom: dashed;
+	border-width: 0.1%;*/
+}
+.content3
+{
+	width: 100%;
+	word-spacing: 3px;
+}
+.content3 p
+{
+	text-align: justify;
+	color: gray;
+	font-family: myfont;
+	font-style: normal;
+	font-size: large;	
+}
+.c3head p
+{
+	color: #555555;
+	font-size: 110%;
+	text-align: justify;
+	font-weight: bold;
+	font-family: myfont;
+}
+.readmore-left
+{
+	text-decoration: none;
+	height: 3.2%;
+	text-align: center;
+	font-family: myfont;
+	text-align: center;
+	font-size: small;
+	color: gray;
+	float: right;
+	width: 30%;
+	padding-right: 10px;
+	background-image: url('images/more-bg.gif');
+	background-repeat: no-repeat;
+}
+#hours
+{
+	top: 5%;
+	border-image-width: 27%;
+}
+.right-content
+{
+	float: right;
+	margin-left: 5%;
+	width: 600px;
+	text-decoration: none;
+}
+.right-content img
+{
+	width: 100%;
+    height: auto;
+}
+.best
+{
+	font-family: myfont;
+	font-size: 130%;
+	font-weight: bold;
+	font-style:normal;
+	color: #78AB46	;
+	border-bottom: 1px dashed;
+	border-color: gray;
+}
+.jus
+{
+	font-family: myfont;
+	font-size: large;
+	color: gray;
+	text-align: justify;
+}
+.links1
+{
+	float: left;
+	padding-left: 3.2%;
+	font-family: myfont;
+	font-size: large;
+}
+.links2
+{
+	position: absolute;
+	float: right;
+	font-family: myfont;
+	font-size: large;
+	margin-left: 400px;
+}
+.links1 ul li
+{
+	list-style-image: url('images/bullet.gif');
+}
+.links2 ul li
+{
+	list-style-image: url('images/bullet.gif');
+}
+.links1 ul li:hover
+{
+	list-style-image: url('images/bullet-hover.gif');
+}
+.links2 ul li:hover
+{
+	list-style-image: url('images/bullet-hover.gif');
+}
+footer
+{
+	width: 100%;
+	height: 90px;
+	background-color: gainsboro;
+}
+.foot
+{
+	margin-top: -20%;
+	margin: 0 auto;
+	width: 930px;
+	height: 90px;
+	background-color: gainsboro;
+}
+.fmenu
+{
+	margin-left: 25%;
+}
+.fmenu li a
+{
+	color: black;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-decoration: none;
+	float: left;
+	text-align: center;
+	font-family: myfont;
+	font-size: small;
+	border-right: 2px solid gray;
+}
+.foot center
+{
+	padding-top: 2px;
+	text-align: center;
+	font-family: myfont;
+	font-size: small;
+	color: black;
+}

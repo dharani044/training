@@ -1,0 +1,47 @@
+TEST TOPICS..
+
+Module 1 
+
+Data Types:
+ Data types and Default values in C#
+ Selecting Identifiers,
+ Keywords,
+ Comment line String Constants Enum
+ 
+Arrays:
+ single, multi dimension, Looping, Conditional statements in C#
+
+Functions:
+ Pass By Value, 
+ Reference (ref & out), 
+ Passing Arrays, 
+ Params Modifier, Property, 
+ Auto-Implemented properties, 
+ Using Properties, 
+ default Properties
+ 
+Functions:
+
+Named and Optional Parameters, 
+
+Advanced Method Concepts- Staic, Instance function, Class, 
+
+Access Specifiers, 
+
+Access Modifiers 
+( Abstract, 
+async, 
+const, 
+event, 
+extern, 
+in, 
+out, 
+override, 
+readonly, 
+sealed, 
+static, 
+unsafe, 
+virtual, 
+volatile), 
+ 
+Creating Array of Object Instances,

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Orange bond</title>
+			<link rel="stylesheet" href="css/style.css" />
+			<!-- script for image slider -->
+			<script type="text/javascript"> 
+				var i = 0; 
+				var image = new Array();   
+				// LIST OF IMAGES 
+				image[0] = "images/slider/01.jpg"; 
+				image[1] = "images/slider/02.jpg"; 
+				image[2] = "images/slider/03.jpg";   
+				image[3] = "images/slider/04.jpg";
+				var k = image.length-1;    
+				var caption = new Array(); 
+				// LIST OF CAPTİONS  
+				caption[0] = "Sample Image here for template-1"; 
+				caption[1] = "Sample Image here for template-2"; 
+				caption[2] = "Sample Image here for template-3";  
+				caption[3] = "Sample Image here for template-4"; 
+				function swapImage(){ 
+				var el = document.getElementById("caption"); 
+				el.innerHTML=caption[i]; 
+				var img= document.getElementById("slide"); 
+				img.src= image[i];  
+				if(i < k ) { i++;}  
+				else  { i = 0; } 
+				setTimeout("swapImage()",3000);  
+				} 
+				function addLoadEvent(func) { 
+				var oldonload = window.onload; 
+				if (typeof window.onload != 'function') { 
+				window.onload = func; 
+				} else  { 
+				window.onload = function() { 
+				if (oldonload) { 
+				oldonload(); 
+				} 
+				func(); 
+				} 
+				} 
+				}  
+				addLoadEvent(function() { 
+				swapImage(); 
+				});  
+			</script> 
+			<!-- script ends here for image slider -->
+		</head>
+		<!-- Body starts here -->
+			<body>
+				<div class="container">
+					<div class="wrapper">
+						<div class="header"> 
+               				<input type="text" name="search" placeholder=" search...!">
+						</div>
+						<div class="logo">
+							<h1><img src="images/tooplate_logo.png" alt="logo-orange bond" /></h1>
+						</div>
+						<div class="menu"> 
+							<ul>
+								<li><a href="#Home">Home</a>
+									<ul class="menu1">
+										<li><a href="#">Features</a>
+											<ul class="menu2">
+												<li><a href="#">Templates</a></li>
+												<li><a href="#">Design</a></li>
+											</ul>		
+										</li>
+										<li><a href="#">Services</a></li>
+										<li><a href="#">Workshops</a></li>
+										<li><a href="#">Intenships</a></li>
+									</ul>	
+								</li>
+								<li><a href="#About">About</a></li>
+								<li><a href="#Portfolio">Portfolio</a></li>
+								<li><a href="#Blog">Blog</a></li>
+								<li><a href="#Contact">Contact</a></li>
+							</ul>
+						</div>
+						<div class="body">
+							<figure class="slider" id="mydiv">
+								<img src="images/slider/01.jpg" alt="slider-image" width="370" height="270" id="slide" />
+				                <p id="caption"></p>
+							</figure>
+								<div class="intro">
+									<h2>Introducing Orange Bond</h2>
+									<p><i>Aliquam in odiot at ipsum mollis facilicis. Integer est sem, dignissim quis actor well, dabbis vel massa. 
+									Aliquam in odiot at ipsum mollis facilicis. Integer est sem, dignissim quis actor well, dabbis vel massa. 
+									Aliquam in odiot at ipsum mollis facilicis.  </i></p>
+									<a href="#"><img src="images/tooplate_learn_more.png" alt="learn-more" /></a>
+								</div>
+						</div>
+						<div class="content">
+							<div class="content1">
+								<img src="images/presentation.png" alt="presentation" />
+								<h3>Lorem ipsum Dolor Sit Amet</h3>
+								<p>Orange Bond theme is a free website template for everyone. You may download, edit and use this template for your websites.</p>
+							</div>
+							<div class="content2">
+								<img src="images/preferences.png" alt="preferences" />
+								<h3>Mauris Pretiumn Ullamcorper Orci</h3>
+								<p>Orange Bond theme is a free website template for everyone. You may download, edit and use this template for your websites.</p>
+							</div>
+							<div class="content3">
+								<img src="images/magic_wand.png" alt="magic-wand" />
+								<h3>Donec Facilisis Sodales Justo ut Ornare</h3>
+								<p>Orange Bond theme is a free website template for everyone. You may download, edit and use this template for your websites.</p>
+							</div>
+							<div class="content4">
+								<img src="images/screen_aqua.png" alt="screen-aqua" />
+								<h3>Etiam Sit Amet Augue Ejet Justo</h3>
+								<p>Orange Bond theme is a free website template for everyone. You may download, edit and use. Validate <span style="color:#FF3300; font-weight:bold;">
+								XHTML</span> and<span style="color:#FF3300;; font-weight:bold;"> CSS</span>.</p>
+							</div>
+							<div class="content5">
+								<img src="images/search.png" alt="search" />
+								<h3>Donec nare Tupis Non Purus Imprediet</h3>
+								<p>Orange Bond theme is a free website template for everyone. You may download, edit and use this template for your websites.</p>
+							</div>
+							<div class="content6">
+								<img src="images/security.png" alt="security" />
+								<h3>Aenean Ultrices Velit mattis Semper</h3>
+								<p>Orange Bond theme is a free website template for everyone. You may download, edit and use this template for your websites.</p>
+							</div>
+						</div>
+						<div class="references">
+							<div class="partners">
+								<h3>Partner Links</h3>
+									<ul>
+										<li><a href="#">Flash Gallery</a></li>
+										<li><a href="#">CSS Templates</a></li>
+										<li><a href="#">Web Designs</a></li>
+										<li><a href="#">Premium Themes</a></li>
+										<li><a href="#">Web Developments</a></li>
+									</ul>
+							</div>
+							<div class="recent">
+								<h3>Recent Post</h3>
+									<ul>
+										<li><a href="#">Aenean Ultrices Velit mattis Semper</a></li>
+										<li><a href="#">Orange Bond theme is a free website template.</a></li>
+										<li><a href="#">Orange Bond them - Etiam Sit Amet Augue Ejet Justo</a></li>
+									</ul>
+							</div>
+							<div class="twitter">
+								<h3>Twitter</h3>
+									<ul>
+										<li><p>Aenean Ultrices theme mattis. <a href="#" id="a">http://bit/ly/a12021</a></p></li>
+										<li><p>Orange Bond theme template. <a href="#" id="a">http://bit/ly/a12022</a></p></li>
+										<li><p>Orange Bond them - Etiam Sit Amet. <a href="#" id="a">http://bit/ly/a12023</a></p></li>
+									</ul>
+							</div>
+							<div class="about">
+								<h3>About</h3>
+								<p>Aliquam in odiot at ipsum mollis facilicis. Integer est sem, dignissim quis actor well, dabbis vel massa.
+								 Integer est vel massa.</p>
+								 <a href="#"><img src="images/facebook-32x32.png" /></a>
+								 <a href="#"><img src="images/flickr-32x32.png" /></a>
+								 <a href="#"><img src="images/twitter-32x32.png" /></a>
+								 <a href="#"><img src="images/youtube-32x32.png" /></a>
+								 <a href="#"><img src="images/rss-32x32.png" /></a>
+							</div>
+						</div>
+						<div class="footer">
+							<p>Copyright &copy 2048 Template World.</p>
+						</div>
+					</div>
+				</div>
+			</body> <!-- body ends here -->
+	</html>

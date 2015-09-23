@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample Responsive</title>   
+
+<!-- Internal CSS Start -->
+<style>
+*{margin:0; padding: 0;}
+#container{ width:100%; max-width:1000px; margin:0 auto;}
+.wrapper{ width:100%; float:left; background-color: #ccc;}
+.mainBody{ background-color: #333; color: #fff; height:300px; padding:3%; font-family:fantasy;}
+
+
+
+
+@media screen and (max-width:768px) {
+ .mainBody{ background-color: red;}
+}
+
+@media screen and (max-width:640px) {
+ .mainBody{ background-color: blue; }
+}
+
+@media screen and (max-width:480px) {
+ .mainBody{ background-color: orange; }
+}
+
+@media screen and (max-width:320px) {
+ .mainBody{ background-color: #000;}
+}
+
+
+
+</style>
+<!-- Internal CSS End -->
+
+
+
+  </head>
+  <body>
+    
+<div id="container">
+	<div class="wrapper">
+
+			<div class="mainBody"><h1> Responsive Template </h1></div>
+
+	</div>
+</div>
+   
+  </body>
+</html>

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html -->
+<html lang="en-US" id="qs-hq"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta name="WT.qs_dlk" content="VcL8ZgrIZ3AAADxFv6cAAAAj">
+
+	<meta name="WT.qs_shmv" content="lv20150423-rabbit.sf.quinstreet.net">
+	<meta http-equiv="Set-Cookie" content="WMUUID=VcL8ZgrIZ3AAADxFv6cAAAAj; path=/;   domain=htmlgoodies.com;">
+
+	<meta name="inject_params" content="WT.qs_dlk=VcL8ZgrIZ3AAADxFv6cAAAAj&amp;">
+
+	<meta http-equiv="Set-Cookie" content="inject_params=WT.qs_dlk=VcL8ZgrIZ3AAADxFv6cAAAAj&amp;; path=/;   domain=htmlgoodies.com;">
+
+        <title>Introduction to CSS Media Queries</title>
+        <meta name="description" content="If you&#39;ve styled print documents with CSS, then you are already familiar with defining different styles for different devices. With media queries, we&#39;ll take this to a new level. We can have different blocks of CSS code for different screen and device sizes.In this tutorial we will show you how to use CSS media queries.">
+        <meta name="keywords" content="cascading style sheets
+CSS
+media queries
+mobile development
+tutorial">
+        <meta name="channel" content="IT">
+        
+		
+				<meta name="articleKey" content="6271650">
+		        		
+		<meta name="robots" content="index,follow">
+        		
+		        <meta name="qs.quad.keywords" content="{keywords:&quot;96010|935613,95910|95850&quot;,nodes:&quot;95910,96010&quot;}">
+        <!-- Begin comScore Tag -->
+<script type="text/javascript" async="" src="./Introduction to CSS Media Queries_files/tag.aspx"></script><script type="text/javascript" src="./Introduction to CSS Media Queries_files/get"></script><script type="text/javascript" src="./Introduction to CSS Media Queries_files/optout_check"></script><script async="" src="./Introduction to CSS Media Queries_files/load"></script><script async="" src="./Introduction to CSS Media Queries_files/analytics.js"></script><script async="" src="./Introduction to CSS Media Queries_files/webtrends.min.js"></script><script async="" src="./Introduction to CSS Media Queries_files/controltag.js.875fd5b280a77e06def8c74a5a268e2c"></script><script type="text/javascript" async="" src="./Introduction to CSS Media Queries_files/controltag"></script><script type="text/javascript" async="" src="./Introduction to CSS Media Queries_files/tag.aspx"></script><script src="./Introduction to CSS Media Queries_files/cb=gapi.loaded_0" async=""></script><script async="" src="./Introduction to CSS Media Queries_files/beacon.js"></script><script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "17199065" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  &lt;img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=17199065&amp;cv=2.0&amp;cj=1" alt=""/&gt;
+</noscript>
+<!-- End comScore Tag -->
+        <script language="javascript" src="./Introduction to CSS Media Queries_files/tx.js"></script>
+        		<link rel="icon" type="image/x-icon" href="http://www.htmlgoodies.com/favicon.ico">
+
+<meta name="application-name" content="HTMLGoodies">
+<meta name="msapplication-tooltip" content="HTMLGoodies: The Ultimate HTML Resource">
+<meta name="msapplication-starturl" content="http://www.htmlgoodies.com/">
+
+                <link rel="canonical" href="./Introduction to CSS Media Queries_files/Introduction to CSS Media Queries.html">
+        
+                    <link rel="alternate" media="only screen and (max-width: 640px)" href="http://mobile.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html">
+        
+        
+		<link rel="stylesheet" type="text/css" href="./Introduction to CSS Media Queries_files/reset-context-min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="./Introduction to CSS Media Queries_files/shCoreDefault.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="./Introduction to CSS Media Queries_files/style.css">
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/jquery.min.js"></script>
+        <script type="text/javascript" src="./Introduction to CSS Media Queries_files/lightbox_me.js"></script>
+        <script type="text/javascript" src="./Introduction to CSS Media Queries_files/common.js"></script>
+		
+				<script type="text/javascript" src="./Introduction to CSS Media Queries_files/plusone.js" gapi_processed="true"></script>
+				
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shCore.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushAppleScript.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushAS3.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushBash.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushColdFusion.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushCpp.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushCSharp.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushCss.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushDelphi.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushDiff.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushErlang.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushGroovy.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushJava.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushJavaFX.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushJScript.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushPerl.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushPhp.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushPlain.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushPowerShell.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushPython.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushRuby.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushSass.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushScala.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushSql.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushVb.js"></script>
+		<script type="text/javascript" src="./Introduction to CSS Media Queries_files/shBrushXml.js"></script>
+		<script type="text/javascript">SyntaxHighlighter.all();</script>
+        
+				<script type="text/javascript" src="./Introduction to CSS Media Queries_files/plusone.js" gapi_processed="true"></script>
+		       
+        <script type="text/javascript" src="./Introduction to CSS Media Queries_files/dfp-common-min.js"></script>
+
+	<script type="text/javascript" src="./Introduction to CSS Media Queries_files/dfp-sync-min.js"></script><script src="./Introduction to CSS Media Queries_files/gpt.js"></script><script id="gpt-impl-0.8343289932236075" src="./Introduction to CSS Media Queries_files/pubads_impl_68r2.js"></script><iframe src="./Introduction to CSS Media Queries_files/container.html" style="visibility: hidden; display: none;"></iframe>
+
+<!-- BEGIN ML/CCM Tag -->
+<script type="text/javascript">var mlCLID="50432";</script>
+<script type="text/javascript" src="./Introduction to CSS Media Queries_files/dfp-ml_ccm2-min.js"></script>
+<!-- END ML/CCM Tag -->
+
+	<!-- BEGIN Krux Tag -->
+	<script type="text/javascript" src="./Introduction to CSS Media Queries_files/dfp-krux-min.js"></script>
+	<script class="kxct" data-id="Jd_Hij0q" data-timing="async" data-version="1.9" type="text/javascript">
+		window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]);
+		(function(){
+			var k=document.createElement('script');k.type='text/javascript';k.async=true;
+			var m,src=(m=location.href.match(/\bkxsrc=([^&]+)/))&&decodeURIComponent(m[1]);
+			k.src = /^https?:\/\/([a-z0-9_\-\.]+\.)?krxd\.net(:\d{1,5})?\//i.test(src) ? src : src === "disable" ? "" : (location.protocol==="https:"?"https:":"http:")+"//cdn.krxd.net/controltag?confid=Jd_Hij0q";
+			var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s);
+		}());
+	</script>
+	<!-- END Krux Tag -->
+
+<meta name="DCSext.tax" content="audience,industry,product development,product web internet"><meta name="DCSext.qse_b2b_tax" content="audience,industry,product development,product web internet">
+<script type="text/javascript">
+	eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('0 2=1(\'2\');0 3=1(\'3\');0 6=1(\'6\');0 4=1(\'4\');0 5=1(\'5\');',7,7,'var|gDFPC|dn|jf|ir|noer|dr'.split('|'),0,{}));
+
+		googletag.defineSlot('/5055/b2b/dev/htmlgoodies/ciu',[[600,200],[300,200]],'ciu-1').addService(googletag.pubads()).setTargeting('pos','top');
+		googletag.defineSlot('/5055/b2b/dev/htmlgoodies/ciu',[[600,200],[300,200]],'ciu-2').addService(googletag.pubads()).setTargeting('pos','low');
+		if(mbw>1049){googletag.defineOutOfPageSlot('/5055/b2b/dev/htmlgoodies/hero','hero-1').addService(googletag.pubads());}
+		googletag.defineSlot('/5055/b2b/dev/htmlgoodies/imu',[[300,250],[300,600],[300,1050]],'imu-1').addService(googletag.pubads()).setTargeting('pos','top');
+		googletag.defineSlot('/5055/b2b/dev/htmlgoodies/imu',[[300,250],[300,600]],'imu-2').addService(googletag.pubads()).setTargeting('pos','mid');
+		googletag.defineSlot('/5055/b2b/dev/htmlgoodies/lb',[728,90],'lb-1').addService(googletag.pubads()).setTargeting('pos','top');
+		googletag.defineSlot('/5055/b2b/dev/htmlgoodies/lb',[728,90],'lb-2').addService(googletag.pubads()).setTargeting('pos','low');
+		googletag.defineOutOfPageSlot('/5055/b2b/dev/htmlgoodies/wa','wa-1').addService(googletag.pubads());
+
+		googletag.pubads().setTargeting('kw',['cascading style sheetsCSSmedia queriesmobile developmenttutorial']);
+		googletag.pubads().setTargeting('tax',['audience','industry','product development','product web internet']);
+		googletag.pubads().setTargeting('path',['beyond','css','introduction-to-css-media-queries.html']);
+		googletag.pubads().setTargeting('articlekey','6271650');
+		googletag.pubads().setTargeting('pagetype','other');
+		googletag.pubads().setTargeting('url','http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html');
+		if(mbw<641){googletag.pubads().setTargeting('pfm','mob');}else{googletag.pubads().setTargeting('pfm','des');}
+		googletag.pubads().setTargeting('env','prod');
+		googletag.pubads().setTargeting('wtdlk',''+myWTDLK+'');
+		if(typeof _ml!='undefined'&&_ml.us){if(_ml.us.tp&&_ml.us.tp.length>0){googletag.pubads().setTargeting('mlt',''+_ml.us.tp+'');}}
+		googletag.pubads().setTargeting('ksg',Krux.segments);
+		googletag.pubads().setTargeting('kuid',Krux.user);
+
+		eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('0(5!=\'\'&&5!=\'2\'){1.3().4(\'5\',\'\'+5+\'\')}0(6!=\'\'&&6!=\'2\'){1.3().4(\'6\',\'\'+6+\'\')}0(9!=\'\'&&9!=\'2\'){1.3().4(\'9\',\'\'+9+\'\')}0(7!=\'\'&&7!=\'2\'){1.3().4(\'7\',\'\'+7+\'\')}0(8!=\'\'&&8!=\'2\'){1.3().4(\'8\',\'\'+8+\'\')}',10,10,'if|googletag|null|pubads|setTargeting|dn|jf|ir|noer|dr'.split('|'),0,{}))
+
+		googletag.pubads().enableSingleRequest();
+		googletag.pubads().collapseEmptyDivs();
+		googletag.pubads().enableSyncRendering();
+		googletag.disablePublisherConsole();
+
+		googletag.enableServices();
+</script>        
+        <!-- QS-AD: 'wa' start -->
+<script language="JavaScript">
+	var t=displayDFPTag("wa");
+	document.write(t);
+</script><script type="text/javascript" src="./Introduction to CSS Media Queries_files/osd.js"></script><style type="text/css">#qs-hq .qs-listings.cachedWidget { display: none; }</style></head><body><iframe id="twttrHubFrameSecure" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrameSecure" src="./Introduction to CSS Media Queries_files/hub.9192a585a56fcc7a63116950f3203cad(1).html" style="position: absolute; top: -9999em; width: 10px; height: 10px;"></iframe><iframe id="twttrHubFrame" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrame" src="./Introduction to CSS Media Queries_files/hub.9192a585a56fcc7a63116950f3203cad.html" style="position: absolute; top: -9999em; width: 10px; height: 10px;"></iframe><div id="itxtexclude"><script src="./Introduction to CSS Media Queries_files/init" type="text/javascript"></script><script src="./Introduction to CSS Media Queries_files/ui_mobile_1423653241.js" type="text/javascript"></script><script src="./Introduction to CSS Media Queries_files/ui_1437569395.js" type="text/javascript"></script><script src="./Introduction to CSS Media Queries_files/tmpl_1433360202.js" type="text/javascript"></script><script src="./Introduction to CSS Media Queries_files/metrics_1395261999.js" type="text/javascript"></script><script src="./Introduction to CSS Media Queries_files/itxt_1426253035.js" type="text/javascript"></script><script src="./Introduction to CSS Media Queries_files/fx2_1395261999.js" type="text/javascript"></script><script src="./Introduction to CSS Media Queries_files/fx_1395261999.js" type="text/javascript"></script><script src="./Introduction to CSS Media Queries_files/debug_1395261999.js" type="text/javascript"></script><script src="./Introduction to CSS Media Queries_files/data_1427871496.js" type="text/javascript"></script><script src="./Introduction to CSS Media Queries_files/core_1436362685.js" type="text/javascript"></script><script src="./Introduction to CSS Media Queries_files/underscore-min-ns-1.4.2.js" type="text/javascript"></script><link id="itxtcss" href="./Introduction to CSS Media Queries_files/itxtcss_1436201204.css" type="text/css" rel="stylesheet"></div><div id="wa-1" style="height: 0px; display: none;">
+	<script type="text/javascript">
+		googletag.display('wa-1');
+	</script><script type="text/javascript" src="./Introduction to CSS Media Queries_files/ads"></script>
+</div>
+<style type="text/css">#wa-1_ad_container { height: 0px; }</style>
+
+<!-- QS-AD: 'wa' end -->		
+            <meta name="cache-creation-time" content="Wed Aug 5 20:23:38 PDT 2015">
+    <script>
+    window.webtrendsAsyncInit=function(){
+        var dcs=new Webtrends.dcs().init({
+            dcsid:"dcs37pv2c00000oun93vypyva_4k6d",
+            domain:"www.qsstats.com",
+            timezone:-8,
+            i18n:true,
+            onsitedoms:"htmlgoodies.com",
+            fpcdom:".htmlgoodies.com",
+            plugins:{
+                //hm:{src:"//s.webtrends.com/js/webtrends.hm.js"}
+            }
+            }).track();
+    };
+    (function(){
+        var s=document.createElement("script"); s.async=true; s.src="/imageserver/common/v10/webtrends.min.js";    
+        var s2=document.getElementsByTagName("script")[0]; s2.parentNode.insertBefore(s,s2);
+    }());
+    </script>
+    <noscript>&lt;img alt="dcsimg" id="dcsimg" width="1" height="1" src="//www.qsstats.com/dcs37pv2c00000oun93vypyva_4k6d/njs.gif?dcsuri=/index.php/beyond/css/introduction-to-css-media-queries.html&amp;amp;WT.js=No&amp;amp;WT.tv=10.4.1&amp;amp;dcssip=www.htmlgoodies.com&amp;amp;WT.qs_dlk=VcL8ZgrIZ3AAADxFv6cAAAAj&amp;"/&gt;</noscript>
+
+
+    
+				
+        <div id="container" style="visibility: visible; opacity: 1;">
+                    <div id="header" class="yui3-cssreset" style="visibility: visible; opacity: 1;">
+                <div id="logo">
+                    <a href="http://www.htmlgoodies.com/"><img src="./Introduction to CSS Media Queries_files/logo.png" alt="htmlgoodies.com"></a>
+                </div>
+
+                <div class="sda" style="visibility: visible; opacity: 1;">
+                    <!-- QS-AD: 'lb' start -->
+<script language="JavaScript">
+	var t=displayDFPTag("lb");
+	document.write(t);
+</script><div id="lb-1" style="visibility: visible; opacity: 1;">
+	<script type="text/javascript">
+		googletag.display('lb-1');
+	</script><div id="lb-1_ad_container" style="visibility: visible; opacity: 1;"><script type="text/javascript" src="./Introduction to CSS Media Queries_files/fpi.js"></script><iframe id="sovrn_ad_unit_284621_async" margin="0" padding="0" frameborder="0" width="728" height="90" scrolling="no" src="./Introduction to CSS Media Queries_files/Introduction to CSS Media Queries.html" data-zid="284621" class="sovrn_ad_unit" style="margin: 0px; padding: 0px; border: 0px none; width: 728px; height: 90px; overflow: hidden;"></iframe>
+
+</div>
+
+</div>
+
+<!-- QS-AD: 'lb' end -->                </div>
+
+                <div id="header-bar">
+                    <div id="new-to-htmlgoodies">
+                        <a href="http://www.htmlgoodies.com/introduction/about/"><img alt="New to HTMLGoodies" src="./Introduction to CSS Media Queries_files/new_to_htmlgoodies.png"></a>
+                    </div>
+					<div style="float:left;padding-left:20px;">
+                        <a href="http://www.htmlgoodies.com/accountManagement?formType=loginForm"><img alt="Sign-In" src="./Introduction to CSS Media Queries_files/Sign-In.png"></a>
+                    </div>
+					<div style="float:left;padding-left:20px;">
+                        <a href="http://www.htmlgoodies.com/accountManagement?formType=registrationForm"><img alt="Register" src="./Introduction to CSS Media Queries_files/Register.png"></a>
+                    </div>
+					<!--<div style="float:left;padding-left:20px;">
+                        <a href="/accountManagement?logout=true&formType=logoutForm"><img src="/img/layout/Sign-Out.png" alt="Sign Out"></a>
+                    </div>-->
+      
+					<div style="float:left;padding-left:175px;">
+                        <a href="http://twitter.com/#!/htmlgoodies" target="_blank"><img alt="Twitter" src="./Introduction to CSS Media Queries_files/twitter.png" title="Twitter" border="0"></a>
+                    </div>
+					<div style="float:left;padding-left:10px;">
+                        <a href="http://www.htmlgoodies.com/rss.xml" target="_blank"><img alt="RSS Icon" src="./Introduction to CSS Media Queries_files/rss-icon.png" title="RSS Feed" border="0"></a>
+                    </div>
+					<div style="float:left;padding-left:10px;">
+                        <a href="http://www.devreader.com/" target="_blank"><img src="./Introduction to CSS Media Queries_files/DR32x32.png" alt="Download our iPhone app" title="Download our iPhone app" border="0"></a>
+                    </div>
+					<div id="search-form">																				
+						<form action="http://www.htmlgoodies.com/gsearch/results" method="post">
+							<div class="form-bg">
+							<input type="text" name="query" id="search-input" size="75">						
+							<button id="search-submit" class="lookitup" type="submit">Search</button>
+							</div>
+						</form>								
+					</div>					
+                </div>
+
+            </div>
+
+            <div id="body" style="visibility: visible; opacity: 1;">
+                 <div id="navigation" class="yui3-cssreset">
+					<ul>
+	<li class="first parent"><a href="http://www.htmlgoodies.com/introduction">Introduction</a></li><li>
+	<a href="http://www.htmlgoodies.com/">home</a></li><li>
+	<a href="http://www.htmlgoodies.com/introduction/about/">about</a></li><li>
+	<a href="http://www.htmlgoodies.com/introduction/intro/">non-technical introduction</a></li><li>
+	<a href="http://www.htmlgoodies.com/introduction/newsletter_archive/">newsletter archive</a></li>
+	<li class="parent"> 
+	<a href="http://www.htmlgoodies.com/html5">HTML 5</a></li><li>
+	<a href="http://www.htmlgoodies.com/html5">html5 development center</a></li>
+	<li><a href="http://www.htmlgoodies.com/HTML5/gallery">html5 website gallery</a></li>
+	<li class="parent">
+	<a href="http://www.htmlgoodies.com/primers/">Primers</a></li><li>
+	<a href="http://www.htmlgoodies.com/primers/html/">html</a></li><li>
+	<a href="http://www.htmlgoodies.com/primers/myspacehtml/">social media and html</a></li><li>
+	<a href="http://www.htmlgoodies.com/primers/ad_banners/">ad banners</a></li><li>
+	<a href="http://www.htmlgoodies.com/primers/perl/">perl &amp; cgi</a></li><li>
+	<a href="http://www.htmlgoodies.com/primers/asp/">asp</a></li><li>
+	<a href="http://www.htmlgoodies.com/primers/jsp/">javascript</a></li><li>
+	<a href="http://www.htmlgoodies.com/primers/database/">database - sql</a></li><li class="parent">
+	<a href="http://www.htmlgoodies.com/tutorials/">HTML &amp; Graphics Tutorials</a></li><li>
+	<a href="http://www.htmlgoodies.com/tutorials/getting_started/">getting started</a></li><li>
+	<a href="http://www.htmlgoodies.com/tutorials/backgrounds/">backgrounds</a></li><li>
+	<a href="http://www.htmlgoodies.com/tutorials/buttons/">buttons</a></li><li>
+	<a href="http://www.htmlgoodies.com/tutorials/browser_specific/">browser specific</a></li><li>
+	<a href="http://www.htmlgoodies.com/tutorials/colors/">colors</a></li><li>
+	<a href="http://www.htmlgoodies.com/tutorials/forms/">forms</a></li><li>
+	<a href="http://www.htmlgoodies.com/tutorials/frames/">frames</a></li><li>
+	<a href="http://www.htmlgoodies.com/tutorials/html_401/">html 4.01 tags</a></li><li>
+	<a href="http://www.htmlgoodies.com/tutorials/html_401/html4-ref/">html 4.01 ref</a></li><li>
+	<a href="http://www.htmlgoodies.com/tutorials/image_maps/">image maps</a></li><li>
+	<a href="http://www.htmlgoodies.com/tutorials/tables/">tables</a></li><li>
+	<a href="http://www.htmlgoodies.com/tutorials/web_graphics/">web graphics</a></li><li class="parent">
+	<a href="http://www.htmlgoodies.com/beyond/">Beyond HTML</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/asp/">asp</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/css/">cascading style sheets</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/css/css-ref">css keyword ref</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/cgi/">cgi scripting</a></li><li>
+    <a href="http://www.htmlgoodies.com/research">developer research center</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/dhtml/">dhtml/layers</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/dotnet/">dot net</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/java/">java applets</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/javascript/">javascript</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/javascript/frameworks">javascript frameworks</a></li><li>	
+	<a href="http://www.htmlgoodies.com/beyond/javascript/js-ref">javascript keyword ref</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/javascript/stips">javascript script tips</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/mobile/">mobile web development</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/cms/">open source cms</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/php/">php</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/security/">security</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/seo/">SEO</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/asp/vbs-ref">vb script keyword ref</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/webmaster/">webmaster tips</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/webmaster/projects">webmaster projects</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/webmaster/toolbox">webmaster toolbox</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/video/">video</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/xml/">xml</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/reference/">general reference pieces</a></li><li>
+	<a href="http://www.htmlgoodies.com/beyond/master/">the master list</a></li><li class="parent">						
+	<a onclick="return false;" href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#">Need Help?</a></li><li>
+	<a href="http://www.webdeveloper.com/forum">discussion boards</a></li><li>
+	<a href="http://www.htmlgoodies.com/mentors/">mentors</a></li>
+    <li class="parent">
+	<a onclick="return false;" href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#">Web Development</a></li>
+	<li><a href="http://www.webdeveloper.com/">Web Development</a></li>
+	<li><a href="http://www.javascriptsource.com/">JavaScript Source</a></li>
+	<li><a href="http://www.phpbuilder.com/">PHP Builder</a></li>
+	<li><a href="http://www.jguru.com/">jGuru (Java)</a></li>	
+</ul>                </div>
+
+                <div id="main-col" style="visibility: visible; opacity: 1;">
+                    <div id="content">
+						<span class="yui3-cssreset">
+                                                <div id="breadcrumb">
+    <a href="http://www.htmlgoodies.com/">HTML Goodies</a> : <a href="http://www.htmlgoodies.com/beyond">Beyond HTML</a> : <a href="http://www.htmlgoodies.com/beyond/css">Cascading Style Sheets</a></div>
+                        						
+                        						</span>
+                        <div class="ciu ciu_ads" style="width:100%; padding-left:0px; padding-right:0px;">
+	<span class="ciu_wrapper" style="width:100%; padding-left:0px; padding-right:0px;"><!-- QS-AD: 'ciu' start -->
+<script language="JavaScript">
+	var t=displayDFPTag("ciu");
+	document.write(t);
+</script><div id="ciu-1">
+	<script type="text/javascript">
+		googletag.display('ciu-1');
+	</script><div id="ciu-1_ad_container"><script type="text/javascript">
+	var clickThroughURL = "http://adclick.g.doubleclick.net/aclk?sa=L&ai=BepDYZ_zCVcrHNYGZvgSVw7n4Dbq9_eMGAAAAEAEgkoblHjgAWLrtnYZmYOWS6IPYDrIBE3d3dy5odG1sZ29vZGllcy5jb226AQlnZnBfaW1hZ2XIAQnaAUxodHRwOi8vd3d3Lmh0bWxnb29kaWVzLmNvbS9iZXlvbmQvY3NzL2ludHJvZHVjdGlvbi10by1jc3MtbWVkaWEtcXVlcmllcy5odG1swAIC4AIA6gIdLzUwNTUvYjJiL2Rldi9odG1sZ29vZGllcy9jaXX4Av7RHpADmgiYA-ADqAMB0ASQTuAEAZAGAaAGH9gHAA&num=0&cid=5Gi7iQFASuAQdEugJjnIx0Ls&sig=AOD64_3X-GLgo2jSJyr4BghU6tXHGE-zOA&client=ca-pub-2278090295496253&adurl=http://o1.qnsr.com/cgi/r?;n=203;c=1413281;s=8986;x=7936;f=201402041153430;u=j;z=TIMESTAMP;k=http://www.eweek.com/ebooks/175119710/95900/4190310/11111";
+	var adText = "Learn how to effectively use the cloud in your business! Our eBook can help you understand cloud integration and guide you to the right solution for your organization. ";
+	var adTextColour = "#000000";
+	var adTextFont = "Arial, Helvetica, sans-serif";
+	var adTextFontSize = Number(12);
+	var backgroundColour = "#E1E1E1";
+	var isSponsored = false;
+	var sponsorName = "";
+	var sponsoredTextColour = "#666666";
+	var sponsoredTextFont = "Arial, Helvetica, sans-serif";
+	var sponsoredTextFontSize = Number(10);
+
+	adcode = '<div style="background-color: ' + backgroundColour + ';"><a href="' + clickThroughURL + '" target="_blank"><span style="font-family: ' + adTextFont + '; font-size: ' + adTextFontSize + 'px; color:' + adTextColour + ';">' + adText + '<\/span></a>';
+
+	if (isSponsored) {
+		adcode += '<div style="padding: 0px; text-align: right;"><span style="font-family: ' + sponsoredTextFont + '; font-size: ' + sponsoredTextFontSize + 'px; color: ' + sponsoredTextColour + ';">Sponsored';
+		if (sponsorName != "") adcode += ' by ' + sponsorName;
+		adcode += '<\/span><\/div>';
+	}
+
+	adcode += '<\/div><img src="http://b2badcenter.quinstreet.com/img/dot.gif" />';
+
+	document.write(adcode);
+</script><div style="background-color: #E1E1E1;"><a href="http://adclick.g.doubleclick.net/aclk?sa=L&ai=BepDYZ_zCVcrHNYGZvgSVw7n4Dbq9_eMGAAAAEAEgkoblHjgAWLrtnYZmYOWS6IPYDrIBE3d3dy5odG1sZ29vZGllcy5jb226AQlnZnBfaW1hZ2XIAQnaAUxodHRwOi8vd3d3Lmh0bWxnb29kaWVzLmNvbS9iZXlvbmQvY3NzL2ludHJvZHVjdGlvbi10by1jc3MtbWVkaWEtcXVlcmllcy5odG1swAIC4AIA6gIdLzUwNTUvYjJiL2Rldi9odG1sZ29vZGllcy9jaXX4Av7RHpADmgiYA-ADqAMB0ASQTuAEAZAGAaAGH9gHAA&num=0&cid=5Gi7iQFASuAQdEugJjnIx0Ls&sig=AOD64_3X-GLgo2jSJyr4BghU6tXHGE-zOA&client=ca-pub-2278090295496253&adurl=http://o1.qnsr.com/cgi/r?;n=203;c=1413281;s=8986;x=7936;f=201402041153430;u=j;z=TIMESTAMP;k=http://www.eweek.com/ebooks/175119710/95900/4190310/11111" target="_blank"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color:#000000;">Learn how to effectively use the cloud in your business! Our eBook can help you understand cloud integration and guide you to the right solution for your organization. </span></a></div><img src="./Introduction to CSS Media Queries_files/dot.gif" alt="">
+</div>
+
+</div>
+
+<!-- QS-AD: 'ciu' end --></span>
+	<!-- <span class="ciu_wrapper"></span> -->
+</div>
+
+<div id="article">
+    <div class="toolbox noBullets colRight">
+	<ul>
+		<li class="comment"><a rel="nofollow" class="comment-reply" href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment_form">Post a comment</a></li>
+		<li class="email"><a rel="nofollow" href="http://www.htmlgoodies.com/email.php/beyond/css/introduction-to-css-media-queries.html">Email Article</a></li>
+		<li class="print"><a rel="nofollow" href="http://www.htmlgoodies.com/print/beyond/css/introduction-to-css-media-queries.html">Print Article</a></li>
+
+		<li id="toolBoxShareMenu" class="share" style="background-position: 0px -1000px;">
+			<img height="16" width="16" class="icon" alt="" src="./Introduction to CSS Media Queries_files/icon_share.gif"> <a rel="nofollow" href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#">Share Articles</a><img src="./Introduction to CSS Media Queries_files/arrow_down_red.gif" alt="Share articles" width="9px" height="9px">
+			<div class="shareSubMenu" style="display: none;">
+				<span class="top"><span></span></span>
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://reddit.com/submit?url=&#39;+encodeURIComponent(location.href)+&#39;&amp;title=&#39;+encodeURIComponent(document.title));"><img src="./Introduction to CSS Media Queries_files/icon_reddit.gif" alt="" width="16" height="16" border="0" class="icon"> Reddit</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://www.facebook.com/sharer.php?u=&#39;+encodeURIComponent(location.href));"><img src="./Introduction to CSS Media Queries_files/icon_facebook.gif" alt="" width="16" height="16" border="0" class="icon"> Facebook</a></li>
+                            <li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://twitter.com/home?status=&#39;+encodeURIComponent(location.href));"><img src="./Introduction to CSS Media Queries_files/icon_twitter.gif" alt="" width="16" height="16" class="icon"> Twitter</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://del.icio.us/post?v=4&amp;noui&amp;jump=close&amp;url=&#39;+encodeURIComponent(location.href)+&#39;&amp;title=&#39;+encodeURIComponent(document.title));"><img src="./Introduction to CSS Media Queries_files/icon_delicious.gif" alt="" width="16" height="16" border="0" class="icon"> del.icio.us</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://digg.com/submit?phase=2&amp;url=&#39;+encodeURIComponent(location.href)+&#39;&amp;title=&#39;+encodeURIComponent(document.title)+&#39;&amp;bodytext=&amp;topic=&#39;);"><img src="./Introduction to CSS Media Queries_files/icon_diggthis.gif" alt="" width="16" height="16" border="0" class="icon"> Digg</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://slashdot.org/slashdot-it.pl?op=basic&amp;url=&#39;+encodeURIComponent(location.href));"><img src="./Introduction to CSS Media Queries_files/icon_slashdot.gif" alt="" width="16" height="16" border="0" class="icon"> Slashdot</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://www.dzone.com/links/add.html?url=&#39;+encodeURIComponent(location.href)+&#39;&amp;title=&#39;+encodeURIComponent(document.title));"><img src="./Introduction to CSS Media Queries_files/icon_dzone.gif" alt="" width="16" height="16" border="0" class="icon"> DZone</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://www.stumbleupon.com/submit?url=&#39;+encodeURIComponent(location.href)+&#39;&amp;title=&#39;+encodeURIComponent(document.title));"><img src="./Introduction to CSS Media Queries_files/icon_stumbleit.gif" alt="" width="16" height="16" border="0" class="icon"> StumbleUpon</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://friendfeed.com/?url=&#39;+encodeURIComponent(location.href)+&#39;&amp;title=&#39;+encodeURIComponent(document.title));"><img src="./Introduction to CSS Media Queries_files/icon_friendfeed.gif" alt="" width="16" height="16" border="0" class="icon"> FriendFeed</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://www.furl.net/storeIt.jsp?t=&#39;+encodeURIComponent(document.title)+&#39;&amp;u=&#39;+encodeURIComponent(location.href));"><img src="./Introduction to CSS Media Queries_files/icon_furl.gif" alt="" width="16" height="16" border="0" class="icon"> Furl</a></li>
+
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://www.newsvine.com/_wine/save?popoff=1&amp;u=&#39;+encodeURIComponent(location.href),&#39;newsvine&#39;,&#39;toolbar=no,width=590,height=600,resizable=yes,scrollbars=yes&#39;);"><img src="./Introduction to CSS Media Queries_files/icon_seednewsvine.gif" alt="" width="16" height="16" class="icon"> Newsvine</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://www.google.com/bookmarks/mark?op=edit&amp;bkmk=&#39;+encodeURIComponent(location.href)+&#39;&amp;title=&#39;+encodeURIComponent(document.title));"><img src="./Introduction to CSS Media Queries_files/icon_google.gif" alt="" width="16" height="16" class="icon"> Google</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://www.linkedin.com/shareArticle?mini=true&amp;ro=true&amp;url=&#39;+encodeURIComponent(location.href)+&#39;&amp;source=&#39;+encodeURIComponent(document.title));"><img src="./Introduction to CSS Media Queries_files/icon_linkedin.gif" alt="" width="16" height="16" class="icon"> LinkedIn</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://www.myspace.com/Modules/PostTo/Pages/?u=&#39;+encodeURIComponent(location.href)+&#39;&amp;t=&#39;+encodeURIComponent(document.title));"><img src="./Introduction to CSS Media Queries_files/icon_myspace.jpg" alt="" width="16" height="16" class="icon"> MySpace</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://www.technorati.com/faves?add=&#39;+encodeURIComponent(location.href));"><img src="./Introduction to CSS Media Queries_files/icon_technorati.gif" alt="" width="16" height="16" class="icon"> Technorati</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:window.open(&#39;http://buzz.yahoo.com/submit?urlsubmission-input=&#39;+encodeURIComponent(location.href)+&#39;&amp;submitHeadline=&#39;+encodeURIComponent(document.title));"><img src="./Introduction to CSS Media Queries_files/icon_yahoo.gif" alt="" width="16" height="16" class="icon"> YahooBuzz</a></li>
+
+					</ul>
+				<span class="bottom"><span></span></span>
+			</div>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript" src="./Introduction to CSS Media Queries_files/article_menu.js"></script>
+<script type="text/javascript">
+    initArticleMenu(document.getElementById("toolBoxShareMenu"));
+</script>
+    <h1>Introduction to CSS Media Queries</h1>
+
+	
+	 <p id="author">
+        By <a href="http://www.htmlgoodies.com/feedback.php/beyond/css/introduction-to-css-media-queries.html">Arpan Dhandhania</a>
+    </p>
+	
+	    
+    <div class="body">
+        <div class="retweet">
+			<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./Introduction to CSS Media Queries_files/tweet_button.b4a367eaaf8727457b2c58a20f015188.en.html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-vertical" title="Twitter Tweet Button" data-twttr-rendered="true" style="position: absolute; visibility: hidden;"></iframe>
+			<script type="text/javascript" src="./Introduction to CSS Media Queries_files/widgets.js"></script>
+        </div>
+        <div class="likebox">
+			<!--<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=215275221841763&amp;xfbml=1"></script><fb:like href="" 	send="false" layout="box_count" width="450" show_faces="true" font="arial"></fb:like>-->
+						<iframe src="./Introduction to CSS Media Queries_files/like.html" scrolling="no" frameborder="0" allowtransparency="true" style="border:none; overflow:hidden; width:55px; height:65px; margin-top:5px; margin-bottom: 0px"></iframe>
+
+			
+     	</div>
+		
+	   	   
+	   
+	    	   
+	<style><!--
+* { margin: 0; padding: 0; }
+img { border: 0; }
+
+.author { padding-bottom: 10px; }
+
+p {
+	margin-bottom: 10px;
+}
+
+ol, ul { margin: 0 0 10px 20px; }
+
+a:link, a:visited {
+	text-decoration: none;
+	color: #731616;
+}
+
+a:hover { text-decoration: underline; }
+
+.form-div { border: 1px #ccc solid; padding: 10px; width: 650px;}
+
+			.code { padding: 5px 10px; border-left: 1px #999 solid; margin: 10px; font-family: monospace; background-color: #eee; }
+			.screenshots { cursor: pointer; }
+			.screenshots div { margin-right: 20px; text-align: center; float: left; }
+--></style>
+<p>When we talk about Cascading Style Sheets (CSS), we associate it with styling an HTML page in a browser. But CSS is capable of handling more that just that. Since CSS2 was introduced, we could specify stylesheets for specific media types such as screen or print. Now with 'media queries' in CSS3, we are able to target specific screen sizes.</p>
+<p>We can have different blocks of CSS code for different screen and device sizes. If this idea doesn't make you jump from your seat, then you're probably missing the point. In today's world, users view web pages on a wide range of screens. Screens can range from the large displays on their work stations, to their laptops on the air plane, to their iPad or other tablets while sitting in the park and finally on their small mobile phone screens on the go.</p>
+<p>Imagine, as a web developer, if you had to build and maintain multiple version of each page to cater to each screen. I, for one, would certainly have switch careers and probably worked at a bakery. Anyway, thankfully for me and all my happy clients, I didn't join a bakery. CSS3 introduced media queries and made life for web developers exciting once again.</p>
+<p>
+</p><div id="olal-container">
+<script language="javascript" src="./Introduction to CSS Media Queries_files/saved_resource"></script>    <link type="text/css" rel="stylesheet" href="./Introduction to CSS Media Queries_files/onePaidAsset.css"><script type="text/javascript" language="javascript" src="./Introduction to CSS Media Queries_files/saved_resource(1)"></script><script src="./Introduction to CSS Media Queries_files/qmp.js" type="text/javascript"></script><script type="text/html" id="assetsListings_listing_template">    ${(currentURl = windows.location.href),''}    ${(leadURL     = '?asset=' +  asset.getKey() + '&srvid=' + getFirstServiceKey() + '&vkey='+ getVendorKey() + '&io=' + asset.getIoNumberStripped() + '&BLUID=' + getBluid() + '&cfurl={currentURl}'),    ''}    <div class="assetNew" style="cursor: hand; cursor: pointer;">        <div class="assetNew-icon">            <img src="/images/pdfImage.jpg" height="32" width="32" border="0">        </div>        <div class="assetNew-title">            ${asset.getTitle(true)}        </div>        <div class="assetNew-download">            <a href="http://o1.qnsr.com/cgi/r?WT.qs_dlk=VcL8ZgrIZ3AAADxFv6cAAAAj;;;n=203;c=1395308;s=9517;x=7936;f=201308291451280;u=j;z=TIMESTAMP;k=http://assetform.htmlgoodies.com/controller${leadURL}&qset=CONTACTFORM_HQB&formHQB=y&domain=www.htmlgoodies.com" class="assetNew-download-link qsct bluid_${getBluid()}"  rel="noindex, nofollow">Download Now</a>        </div>    </div></script><div id="assetsListings" class="cachedWidget" style="display: block;">    <span id="assetsListings_filterCriteria" style="display:none" class="%3Ca%20class%3D%22array%22%3E%3Ce%20key%3D%22sp_260910%22%3E%3C%21%5BCDATA%5BWidget%5D%5D%3E%3C%2Fe%3E%3Ce%20key%3D%22sp_261200%22%3E%3C%21%5BCDATA%5Btrue%5D%5D%3E%3C%2Fe%3E%3Ce%20key%3D%22sp_261220%22%3E%3C%21%5BCDATA%5Btrue%5D%5D%3E%3C%2Fe%3E%3Ce%20key%3D%22sp_260890%22%3E%3C%21%5BCDATA%5B%2Fbeyond%2Fcss%2Fintroduction-to-css-media-queries.html%5D%5D%3E%3C%2Fe%3E%3Ce%20key%3D%22sp_260880%22%3E%3C%21%5BCDATA%5Bwww.htmlgoodies.com%5D%5D%3E%3C%2Fe%3E%3Ce%20key%3D%22sp_260920%22%3E%3C%21%5BCDATA%5B19738410%5D%5D%3E%3C%2Fe%3E%3C%2Fa%3E"></span>    <span id="assetsListings_dataValues" style="display:none" class="%3Ca%20class%3D%22array%22%3E%3Ce%20key%3D%22IO%22%3E%3C%21%5BCDATA%5BMULTI-MATCH%5D%5D%3E%3C%2Fe%3E%3Ce%20key%3D%22LoadProductContentMap%22%3E%3C%21%5BCDATA%5Btrue%5D%5D%3E%3C%2Fe%3E%3Ce%20key%3D%22AllClientsRequireAssets%22%3E%3C%21%5BCDATA%5Btrue%5D%5D%3E%3C%2Fe%3E%3C%2Fa%3E"></span>    <span id="assetsListings_tracking" style="display:none" class="%5B%222015080523191953435054001%22%5D"></span>    <span id="assetsListings_ajaxLoadEffect" style="display:none;" class="progressBar"></span>    <span id="assetsListings_useOnPageWrapper" style="display:none;" class="true"></span>    <span id="assetsListings_optimizeForUser" style="display:none;" class="true"></span>    <div id="assetsListings_listing">                        <div class="assetNew" style="cursor: hand; cursor: pointer;">                    <div class="assetNew-icon">                        <img src="./Introduction to CSS Media Queries_files/pdfImage.jpg" height="35" width="35" border="0" alt="">                    </div>                    <div class="assetNew-title">                        Putting the Kibosh on Shadow IT: Best Practices for Hybrid Cloud Management                    </div>                    <div class="assetNew-download">                        <a href="http://o1.qnsr.com/cgi/r?WT.qs_dlk=VcL8ZgrIZ3AAADxFv6cAAAAj;;;n=203;c=1395308;s=9517;x=7936;f=201308291451280;u=j;z=TIMESTAMP;k=http://assetform.htmlgoodies.com/controller?asset=206097710&srvid=95910&vkey=13222310&io=220684&BLUID=2015080523191953435054001&qset=CONTACTFORM_HQB&formHQB=y&domain=www.htmlgoodies.com&cfurl=http%3A%2F%2Fwww.htmlgoodies.com%2Fbeyond%2Fcss%2Fintroduction-to-css-media-queries.html" class="assetNew-download-link qsctCached bluid_2015080523191953435054001" rel="noindex, nofollow">Download Now</a>                    </div>                </div>                </div><img src="./Introduction to CSS Media Queries_files/it" height="1" width="1" style="display: none;"><div id="assetsListings_updated_listing"></div></div>
+<div class="sblLoadingDiv" id="assetsListingsLoadingDiv" style="display: none;"><div id="assetsListingsLoadingDivLoader" style="text-align: center; margin: 20px 50px; padding-top: 20px; padding-bottom: 20px; border: 1px solid rgb(143, 172, 80); background-color: rgb(231, 239, 218);" class="progressThermometerLoader"><img id="assetsListingsLoadingDivLoader_percentImage" src="./Introduction to CSS Media Queries_files/progressbar.gif" width="120" alt="undefined" title="undefined" style="width: 120px; height: 12px; padding: 0px; margin: 0px; background-image: url(http://hqx-qmp.quinstreet.com/hqx/images/progressbg_green.gif); background-position: 0px 50%;"><span id="assetsListingsLoadingDivLoader_percentText"> 100%</span></div></div></div>
+<div style="clear:both;"></div>
+If you've styled print documents with CSS, then you are already familiar with defining different styles for different devices. With media queries, we'll take this to a new level. Rather than looking at what device it is, we will look at what capabilities the device has. More specifically, we will look at the following:<p></p>
+<ul>
+<li>height and width of the device</li>
+<li>height and width of the browser</li>
+<li>screen resolution</li>
+<li>orientation of the device (for mobile phones and tablets; portrait or landscape)</li>
+</ul>
+<p>If your browser supports media queries, then you're good to go. Before we jump into seeing how it works, <a href="http://www.htmlgoodies.com/imagesvr_ce/3028/mq_demo.html" target="_blank">click here</a> to see if a working example. If you have a mobile phone that allows you to browser, open the link on it and see the difference. As an alternative, reduce the width of the window to 480 pixels and you will immediately see the difference.</p>
+<p>Here are screenshots of the page at different widths.</p>
+<p><img style="border: 0pt none;" src="./Introduction to CSS Media Queries_files/layout_wide.png" border="0" alt="Desktop" width="503" height="320"><br>Page layout of desktop screen.</p>
+<p><img src="./Introduction to CSS Media Queries_files/layout_mobile.png" border="0" alt="Mobile" width="243" height="320"><br>Page layout of mobile phone.</p>
+<h2>Different Styles for Different Screens: How it Works</h2>
+<p>You must be thinking that to achieve this, you will have to learn a whole new chapter of CSS. Fortunately you don't have to. All it takes is a few extra lines of code, or sometimes just a few words. The simplest way to use media queries is to have a block of CSS code in the same stylesheet file. So all the CSS that is specific to mobile phones, would be defined in the following block:</p>
+<div class="code">@media only screen and (max-device-width: 480px) {<br> /* define mobile specific styles come here */<br> }</div>
+<p>Usually we would define this at the end of the file in order to leverage the cascading property of CSS. The background color, the borders and other common attributes would typically be defined above and wont be changed here. The following properties are the ones that we would replace most often:</p>
+<ul>
+<li>width</li>
+<li>height</li>
+<li>float</li>
+<li>margins</li>
+</ul>
+<p>For example, let's say the logo of the company is 600 pixel wide on the desktop version of the website. Now on a device with a width of 480 pixels, the scroller will appear and that is not desirable. So we should have a smaller version of the logo and the CSS file would look like this:</p>
+<div class="code">#logo { background: url(images/logo.png); width: 600px; border: 1px #ccc solid; }<br> @media only screen and (max-device-width: 480px) {<br> #logo { background: url(images/logo_mobile.png); width: 440px; }<br> }</div>
+<p>If you notice, we have not over-written the border property for the logo, so the border will continue to show on mobile devices. Simple isn't it?</p>
+<h2>Linking to Different Stylesheets Using Media Queries</h2>
+<p>Adding all the styles in the same CSS file is acceptable for the above example, but for a full-fledged  website, it will become a pain to manage the code. That is why I prefer to link a new stylesheet for specific screen sizes. The way to do that is to use the media attribute of the link tag.</p>
+<div class="code">&lt;link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="mobile-device.css" /&gt;</div>
+<p>Now you can define all the mobile specific styles in the mobile-devices.css file.</p>
+<h2>How to Test Multiple Devices?</h2>
+<p>Being able to style your website for various devices is one part of the problem. You need to be able to test too. If you are a proud owner of an iPhone, an android device, an iPad etc, then you're can test it on each of these devices directly. For the rest of us, there is a brilliant site called <a href="http://protofluid.com/" target="_blank">ProtoFluid</a>. It allows you to enter a URL (which can be a local URL too) and it renders the page as if it were being viewed on the browser of an iPhone, iPad and a wide variety of devices. Another huge advantage of using ProtoFluid is that it allows you to use <a href="http://getfirebug.com/" target="_blank">Firebug</a> on your site. Being able to use Firebug will hugely speed up the development process.</p>
+<h2>Conclusion</h2>
+<p>Media query is a powerful tool in a world where websites are viewed on a huge range of devices. With very little change, you can make an existing website mobile and tablet compliant. Today, when building a new website, many developers build it for the desktop screen and then use media queries to retro-fit it for the mobile and tablet. While this will work, its not the optimal way to do it. Media queries are meant for design presentation, not optimization. To optimize for the mobile, you have to optimize pictures and the markup.</p>	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+                <br>
+                    <br>
+            </div>
+
+    <a name="comment_form"></a>
+    <div id="ce-comments">
+        <script type="text/javascript" src="./Introduction to CSS Media Queries_files/jquery.min(1).js"></script>
+        <script type="text/javascript" src="./Introduction to CSS Media Queries_files/recaptcha_ajax.js"></script>
+
+        <script src="./Introduction to CSS Media Queries_files/facebox.js" type="text/javascript"></script>
+        <script type="text/javascript">var blurbKey = 7969630;</script>
+        <script type="text/javascript" src="./Introduction to CSS Media Queries_files/ce_comments.js"></script>
+        <p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" class="comment-reply">Make a Comment</a></p>
+        
+    <ul><li><div class="comment"><h3><span class="byline">adam</span><span class="datetime">said on January 4, 2015 at 3:35 am</span></h3><p class="comment-body">Thanks for the post. Just wanted to share the website with "745 - Responsive Websites"... just amazing.</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-3228058023" class="comment-reply">Reply</a></p></div></li><li><div class="comment altrow"><h3><span class="byline">Mahesh Jagtap</span><span class="datetime">said on October 5, 2014 at 11:35 pm</span></h3><p class="comment-body">hi,
+sir/mam
+i created the CSS of media queries and add the link in to the html page but this not work
+</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-2515957323" class="comment-reply">Reply</a></p></div></li><li><div class="comment"><h3><span class="byline">pervaiz malla</span><span class="datetime">said on September 25, 2014 at 11:18 pm</span></h3><p class="comment-body">simply awesome... thanks</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-2451757823" class="comment-reply">Reply</a></p></div></li><li><div class="comment altrow"><h3><span class="byline">chennaroy</span><span class="datetime">said on August 7, 2014 at 3:30 am</span></h3><p class="comment-body">Nice Article good to read...</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-46857422" class="comment-reply">Reply</a></p></div></li><li><div class="comment"><h3><span class="byline">sabelo</span><span class="datetime">said on May 14, 2014 at 2:32 am</span></h3><p class="comment-body">Well Explained indeed!</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-43549922" class="comment-reply">Reply</a></p></div></li><li><div class="comment altrow"><h3><span class="byline">Nivas G</span><span class="datetime">said on May 6, 2014 at 5:01 am</span></h3><p class="comment-body">well enough to understand.</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-1776857323" class="comment-reply">Reply</a></p></div></li><li><div class="comment"><h3><span class="byline">mf</span><span class="datetime">said on March 25, 2014 at 12:21 pm</span></h3><p class="comment-body">I was advised by our email marketing vendor that we can use CSS media queries to make our html emails have responsive design. has anyone done this? I was always advised you can't use CSS when creating html emails.</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-1547857323" class="comment-reply">Reply</a></p></div></li><li><div class="comment altrow"><h3><span class="byline">Cris</span><span class="datetime">said on December 24, 2013 at 12:41 pm</span></h3><p class="comment-body">This is a great concise explanation. Thank you!</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-1368060323" class="comment-reply">Reply</a></p></div></li><li><div class="comment"><h3><span class="byline">ranadheer</span><span class="datetime">said on October 17, 2013 at 4:01 am</span></h3><p class="comment-body">nice explanation..</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-1107958423" class="comment-reply">Reply</a></p></div></li><li><div class="comment altrow"><h3><span class="byline">jai</span><span class="datetime">said on September 23, 2013 at 6:08 am</span></h3><p class="comment-body">its really excellent....thankz</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-1013478623" class="comment-reply">Reply</a></p></div></li><li><div class="comment"><h3><span class="byline">Ruth</span><span class="datetime">said on August 20, 2013 at 6:57 am</span></h3><p class="comment-body">Worked great on the desktop screen, resizing it -- but isn't on the phone -- weird.</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-903057523" class="comment-reply">Reply</a></p></div><ul class="child"><li><div class="comment altrow"><h3><span class="byline">Simon</span><span class="datetime">said on January 2, 2014 at 11:21 am</span></h3><p class="comment-body">You'll need this: &lt;meta name="viewport" content="initial-scale=1.0,width=device-width" /&gt; 
+
+Otherwise you're site can't tell if it's a normal browser or device ;)</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-35922022" class="comment-reply">Reply</a></p></div><ul class="child"><li><div class="comment"><h3><span class="byline">Dillon Burnett</span><span class="datetime">said on July 7, 2015 at 9:36 am</span></h3><p class="comment-body">Most people forget to add the viewport,  im glad someone said this.  otherwise a lot of people how problems with mobile / tablets changing between different css.</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-4382057723" class="comment-reply">Reply</a></p></div></li><li><div class="comment altrow"><h3><span class="byline">Eric Sebasta</span><span class="datetime">said on June 25, 2015 at 3:04 am</span></h3><p class="comment-body">I agree and can't believe it wasn't covered. Other then that, a great article I have pointed many people to.</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-4300557723" class="comment-reply">Reply</a></p></div></li></ul></li></ul></li><li><div class="comment"><h3><span class="byline">Ruth</span><span class="datetime">said on August 20, 2013 at 6:55 am</span></h3><p class="comment-body">I love the example responsive page, but I'm not seeing the change on my smart phone or ipad -- why isn't it following the media size changes?  Any thoughts?</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-20926222" class="comment-reply">Reply</a></p></div></li><li><div class="comment altrow"><h3><span class="byline">Mohit Singh</span><span class="datetime">said on July 11, 2013 at 4:52 am</span></h3><p class="comment-body">Thanks for sharing this.it is great tutorial...</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-19604122" class="comment-reply">Reply</a></p></div></li><li><div class="comment"><h3><span class="byline">Neo An</span><span class="datetime">said on June 18, 2013 at 1:32 am</span></h3><p class="comment-body">Thank for sharing. It's one of the best solutions I've got right now!</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-716357423" class="comment-reply">Reply</a></p></div></li><li><div class="comment altrow"><h3><span class="byline">Rajthilak</span><span class="datetime">said on March 27, 2013 at 6:57 am</span></h3><p class="comment-body">Its great but failed in IE.9... any solution to work media query in IE ?</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-11928722" class="comment-reply">Reply</a></p></div><ul class="child"><li><div class="comment"><h3><span class="byline">Gerson</span><span class="datetime">said on May 5, 2014 at 6:12 am</span></h3><p class="comment-body">It's good introduction article, but ironically this site isn't so responsive to screen changes. </p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-1769757323" class="comment-reply">Reply</a></p></div></li><li><div class="comment altrow"><h3><span class="byline">Gerson</span><span class="datetime">said on May 5, 2014 at 6:11 am</span></h3><p class="comment-body">What are the chances that a tablet or smartphone would use IE9 or below? 
+
+Just do a IE check in the header and load different CSS files</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-43178122" class="comment-reply">Reply</a></p></div></li><li><div class="comment"><h3><span class="byline">Matt</span><span class="datetime">said on October 15, 2013 at 8:36 am</span></h3><p class="comment-body">Why would you use IE in the first place?</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-1100458923" class="comment-reply">Reply</a></p></div><ul class="child"><li><div class="comment altrow"><h3><span class="byline">Lee</span><span class="datetime">said on March 23, 2014 at 4:16 pm</span></h3><p class="comment-body">Exactly, this really bugs me. Media queries are there to help deal with displaying your website on essentially a smartphone or tablet. Not for browser resizing.</p><p class="comment-actions"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#comment-formbox" id="comment-41263022" class="comment-reply">Reply</a></p></div></li></ul></li></ul></li></ul><p id="more-comments"><a href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#more-comments">Read More Comments...</a></p></div>
+</div>
+                    </div>
+					                    <div id="right-col" class="yui3-cssreset" style="visibility: visible; opacity: 1;">
+                        <ul style="visibility: visible; opacity: 1;">
+                            <li>
+                                <div id="newsletter-signup">
+										<div><h4>Web Development Newsletter Signup</h4></div>
+										<div class="nl_hide"><input type="text" value="" id="nl_email"></div>
+										<input type="hidden" name="nl_uri" id="nl_uri" value="http://www.htmlgoodies.com/">
+										<input id="NewsletterSignup" type="hidden" value="Web Development Update" name="NewsletterSignup">
+										<input id="navNewsletterSignup" type="hidden" value="1543" name="NewsletterKey">
+										<input id="businessUnit" type="hidden" value="Internet.com" name="businessUnit">
+										<input id="RegistrationWebsite" type="hidden" value="www.htmlgoodies.com" name="RegistrationWebsite">
+                                        <div class="nl_hide"><button type="submit" onclick="javascript:doNLSubmit();" title="Signup Now!">Submit</button></div>
+										<div class="nl_hide" id="nl_error">Invalid email</div>
+										<div class="nl_message">You have successfuly registered to our newsletter.</div>
+                                </div>
+								<!--<div><a href="http://e-newsletters.internet.com/earthweb_opt-in.html">Other Related Newsletters</a></div>-->
+                            </li>
+							<li>&nbsp;</li>
+                            <li style="visibility: visible; opacity: 1;"><!-- QS-AD: 'imu' start -->
+<script language="JavaScript">
+	var t=displayDFPTag("imu");
+	document.write(t);
+</script><div id="imu-1" style="visibility: visible; opacity: 1;">
+	<script type="text/javascript">
+		googletag.display('imu-1');
+	</script><div id="imu-1_ad_container" style="visibility: visible; opacity: 1;"><script type="text/javascript" src="./Introduction to CSS Media Queries_files/fpi(1).js"></script><iframe id="sovrn_ad_unit_284623_async" margin="0" padding="0" frameborder="0" width="300" height="600" scrolling="no" src="./Introduction to CSS Media Queries_files/Introduction to CSS Media Queries.html" data-zid="284623" class="sovrn_ad_unit" style="margin: 0px; padding: 0px; border: 0px none; width: 300px; height: 600px; overflow: hidden;"></iframe>
+
+</div>
+
+</div>
+
+<!-- QS-AD: 'imu' end --></li>
+                            <li>&nbsp;</li>
+                            <li><div class="articlecategorysummary">
+    <iframe id="whitePaperIFrame" scrolling="no" frameborder="0" align="middle" src="./Introduction to CSS Media Queries_files/saved_resource.html" height="705"></iframe>
+</div>
+<script type="text/javascript"> 
+var updateIframe = false;
+var t = 0;
+
+function updateQMPIframe(){
+    if(!updateIframe) { 
+        if($('#whitePaperIFrame').contents().find('.asset').length > 0) {
+            var height = $('#whitePaperIFrame').contents().find('#assetsListings').height();
+            height = height + 50;
+            var iframe = document.getElementById('whitePaperIFrame');  
+            iframe.setAttribute( 'height', height);
+            updateIframe = true;
+            clearTimeout(t);
+        }else {
+            t = setTimeout('updateQMPIframe()', 1000);
+        }
+    }
+}
+
+t = setTimeout('updateQMPIframe()', 5000);
+
+
+</script></li>
+							<li>&nbsp;</li>
+                            <li style="visibility: visible; opacity: 1;"><!-- QS-AD: 'imu' start -->
+<script language="JavaScript">
+	var t=displayDFPTag("imu");
+	document.write(t);
+</script><div id="imu-2" style="visibility: visible; opacity: 1;">
+	<script type="text/javascript">
+		googletag.display('imu-2');
+	</script><div id="imu-2_ad_container" style="visibility: visible; opacity: 1;"><script type="text/javascript" src="./Introduction to CSS Media Queries_files/fpi(2).js"></script><iframe id="sovrn_ad_unit_284622_async" margin="0" padding="0" frameborder="0" width="300" height="250" scrolling="no" src="./Introduction to CSS Media Queries_files/Introduction to CSS Media Queries.html" data-zid="284622" class="sovrn_ad_unit" style="margin: 0px; padding: 0px; border: 0px none; width: 300px; height: 250px; overflow: hidden;"></iframe>
+
+</div>
+
+</div>
+
+<!-- QS-AD: 'imu' end --></li>
+							<!-- Code to put on site page to show pinning option --> 
+<script type="text/javascript" language="javascript">
+
+	if($.browser.msie){
+		if(document.documentMode != undefined && document.documentMode==9){
+			if (!window.external.msIsSiteMode()) {
+				document.write('<div id="pinMeContainer"><img class="msPinSite" style="cursor: move;" src="/img/htmlgoodies_logo.jpg" height="100" weight="100" /><br/><span id="pinMe">To Pin this site, drag this image above to your Windows Taskbar. Try it now!</span></div>'); 
+			}else {
+					try {
+					  if (window.external.msIsSiteMode()) {
+							$.get('http://www.htmlgoodies.com/latest_articles/3/'+Math.round(Math.random()*1000000000000), function(data){
+								displayLatestNews(data);
+							});
+					  }
+				  } catch (ex) { }
+			}
+		}else{
+			document.write('<div id="pinMeContainer"><img class="msPinSite" src="/img/htmlgoodies_logo.jpg" height="65" weight="65" /><br/><span id="pinMe">Upgrade your browser to IE 9 to see the power of Site Pinning!</span></div>'); 	
+		}
+	}
+	function displayLatestNews(data){
+		try{
+			g_ext = window.external;
+			if(data.articles != undefined && data.articles.length){
+				g_ext.msSiteModeClearJumpList();
+				g_ext.msSiteModeCreateJumplist('HTMLGoodies Latest News');
+				for(i=0; i<data.articles.length; i++){
+				  g_ext.msSiteModeAddJumpListItem (data.articles[i].title, data.articles[i].link, 'http://www.htmlgoodies.com/favicon.ico');
+				}
+				var dt = new Date();
+				var updated = (dt.getMonth()+1) +"/"+(dt.getDay()+1)+"/"+dt.getFullYear()+" "+dt.toLocaleTimeString();
+				
+				g_ext.msSiteModeAddJumpListItem ('Last updated - '+updated, 'http://www.htmlgoodies.com/html5/index.php', 'http://www.htmlgoodies.com/img/refresh.ico');
+				g_ext.msSiteModeShowJumpList();
+			}
+		}catch(ex){ }
+	}
+</script>
+<!-- End of code to put on site page to show pinning option -->  
+                                                    </ul>
+                    </div>
+					<span class="yui3-cssreset">
+                    					</span>
+					                </div>
+            </div>
+
+            <div id="footer" class="yui3-cssreset">
+				<!-- HTMLGoodies: Begin Rocket Fuel Conversion Action Tracking Code Version 7 -->
+				<script language="javascript">
+				function callImpressionTracker(img_url) {
+					var trackingPixel = new Image();
+					cachebuster=parseInt(Math.random()*99999999);  // cache buster
+					trackingPixel.src = img_url + "&ra=" + cachebuster;
+					document.body.appendChild(trackingPixel);
+				}
+				// Code for Action: HTMLGoodies - Quinstreet - Tracking
+				callImpressionTracker("http://20514681p.rfihub.com/ca.gif?rb=3335&ca=20514681")
+				</script>
+				<!-- End Rocket Fuel Conversion Action Tracking Code Version 7 -->
+
+                <div class="sda">
+				<!-- QS-AD: 'lb' start -->
+<script language="JavaScript">
+	var t=displayDFPTag("lb");
+	document.write(t);
+</script><div id="lb-2">
+	<script type="text/javascript">
+		googletag.display('lb-2');
+	</script><div id="lb-2_ad_container">
+<ins style="width: 728px; height: 90px; display: inline-table; position: relative; border: 0px; vertical-align: bottom;"><ins style="width: 728px; height: 90px; display: block; position: relative; border: 0px;"><iframe id="google_ads_iframe_/5055/b2b/dev/htmlgoodies/lb_1" name="google_ads_iframe_/5055/b2b/dev/htmlgoodies/lb_1" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; position: absolute; top: 0px; left: 0px;"></iframe></ins></ins></div>
+<script>googletag.impl.pubads.createDomIframe("lb-2_ad_container" ,"/5055/b2b/dev/htmlgoodies/lb_1",false,false);</script>
+</div>
+
+<!-- QS-AD: 'lb' end -->				</div>
+                <!-- Google Analytics -->
+                <script>
+                    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                    ga('create', 'UA-48212103-1', 'auto');
+                    ga('send', 'pageview');
+                </script>
+                <!-- End Google Analytics -->
+
+                <style type="text/css">
+#developerBrand-footer{text-align:center;margin:0 auto}
+#footerlinks{font-size:12px;word-spacing:1px}
+#footerlinks a{color:#000;margin:5px 0 0}
+#itbeBrand-footer{text-align:center;margin:0 auto}
+#itbusinessedge-footer{text-align:center;margin:0 auto}
+#footercopyright{font-size:12px;margin:5px 0 0}
+#developerBrandForum-footer{text-align:center;margin:0 auto}
+#itbeBrandForum-footer{text-align:center;margin:0 auto}
+.footerLogoClass{text-align:center;margin:0 auto}
+</style>
+<div id="developerBrand-footer" style=""><div id="developerlogo"><img src="./Introduction to CSS Media Queries_files/developer_logo.jpg" border="0" alt=""></div><div id="footercopyright"> Property of Quinstreet Enterprise. </div><div id="footerlinks"><a rel="nofollow" href="http://www.htmlgoodies.com/terms">Terms of Service</a> | <a rel="nofollow" href="http://www.htmlgoodies.com/licensing">Licensing &amp; Reprints</a> | <a rel="nofollow" href="http://quinstreetenterprise.com/about_us" target="_blank">About Us</a> | <a rel="nofollow" href="http://www.htmlgoodies.com/privacy">Privacy Policy</a> | <a rel="nofollow" href="http://quinstreetenterprise.com/about_us#contactus" target="_blank">Advertise</a> | <a target="_blank" href="http://www.htmlgoodies.com/sitemap.html">Sitemap</a><br>Copyright 2015 QuinStreet Inc. All Rights Reserved.<noscript>Copyright 2014 Quinstreet Inc. All right reserved.&lt;noscript&gt;&lt;/div&gt;</noscript></div></div>
+<div id="itbeBrand-footer" style="display:none"></div>
+<div id="itbusinessedge-footer" style="display:none"></div>
+<div id="zde-footer" style="display:none" class="footerLogoClass"></div>
+<div id="baseline-footer" style="display:none" class="footerLogoClass"></div>
+<div id="cinsider-footer" style="display:none" class="footerLogoClass"></div>
+<div id="cioinsight-footer" style="display:none" class="footerLogoClass"></div>
+<div id="eweek-footer" style="display:none" class="footerLogoClass"></div>
+<div id="enterpriseappstoday-footer" style="display:none" class="footerLogoClass"></div>
+<div id="eseminar-footer" style="display:none" class="footerLogoClass"></div>
+<div id="wbg-footer" style="display:none" class="footerLogoClass"></div>
+<div id="developerBrandForum-footer" style="display:none"></div>
+<div id="itbeBrandForum-footer" style="display:none"></div>
+<script async="" language="Javascript" src="./Introduction to CSS Media Queries_files/footerbrandingcode.js"></script>
+<!-- Google Classical Analytics -->
+<script src="./Introduction to CSS Media Queries_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--     hide from no js browsers
+delete Array.prototype.itemValidation;
+delete Array.prototype.isArray;
+var superTracker = _gat._getTracker("UA-2838492-1");
+superTracker._initData();
+superTracker._trackPageview();
+
+-->
+</script>
+<script type="text/javascript">
+<!--     hide from no js browsers
+   var site_name =  location.hostname;
+   if ( site_name.indexOf("www.") != 0 ) {
+     site_name  = "www."+site_name ;
+   }
+   document.write("<SCR" + "IPT LANGUAGE='JavaScript1.2' SRC='/icom_includes/footers/sites/"+ site_name +".js' TYPE='text/javascript'><\/SCR" + "IPT>");
+-->
+</script><script language="JavaScript1.2" src="./Introduction to CSS Media Queries_files/www.htmlgoodies.com.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--hide from no js browsers
+   pageTracker._initData();
+   pageTracker._trackPageview();
+   // -->
+</script>
+<!-- End Google Analytics -->            </div>
+        </div><img src="./Introduction to CSS Media Queries_files/ca.gif" alt="">
+    <!-- start Vibrant Media IntelliTXT script section -->
+    <script type="text/javascript" src="./Introduction to CSS Media Queries_files/front.asp"></script>
+    <!-- end Vibrant Media IntelliTXT script section -->
+  <link href="./Introduction to CSS Media Queries_files/css" rel="stylesheet" type="text/css">
+<div id="newuserregistrationpopup">
+    <div id="closepopup"><a class="close" href="http://www.htmlgoodies.com/beyond/css/introduction-to-css-media-queries.html#"><img src="./Introduction to CSS Media Queries_files/close_icon.png" border="0" alt=""></a></div>
+    <div id="thankuptext">Thanks for your registration, follow us on our social networks to keep up-to-date</div>
+    <div id="socialsharebtn">
+        <div id="socialbtns"><a href="http://o1.qnsr.com/cgi/r?WT.qs_dlk=VcL8ZgrIZ3AAADxFv6cAAAAj;;;n=203;c=1459370;s=8986;x=7936;f=201411241658150;u=j;z=TIMESTAMP;k=https://www.facebook.com/pages/HTMLGoodies/256117451245273?fref=ts" target="_blank"><img src="./Introduction to CSS Media Queries_files/user-register-popup-fb.png" border="0" alt=""></a></div>
+        <div id="socialbtns"><a href="http://o1.qnsr.com/cgi/r?WT.qs_dlk=VcL8ZgrIZ3AAADxFv6cAAAAj;;;n=203;c=1459370;s=8986;x=7936;f=201411241658150;u=j;z=TIMESTAMP;k=https://twitter.com/htmlgoodies" target="_blank"><img src="./Introduction to CSS Media Queries_files/user-register-popup-tw.png" border="0" alt=""></a></div>
+        <div id="socialbtns"><a href="http://o1.qnsr.com/cgi/r?WT.qs_dlk=VcL8ZgrIZ3AAADxFv6cAAAAj;;;n=203;c=1459370;s=8986;x=7936;f=201411241658150;u=j;z=TIMESTAMP;k=https://plus.google.com/u/0/b/117958898397590965610/+Htmlgoodiescom/posts" target="_blank"><img src="./Introduction to CSS Media Queries_files/user-register-popup-gplus.png" border="0" alt=""></a></div>
+        <div id="socialbtns"><a href="http://www.htmlgoodies.com/rss.xml" target="_blank"><img src="./Introduction to CSS Media Queries_files/user-register-popup-rss.png" border="0" alt=""></a></div>
+    </div>
+</div>
+    
+
+
+<div class="kxhead" data-id="Jd_Hij0q" style="display:none !important;"><span class="kxtag kxinvisible" data-id="44745" data-alias="DataXu user match"><script>
+(function(){
+        var kuid = Krux('get', 'user');
+        var prefix = location.protocol;
+        if (kuid) {
+           var dxu_url = '//i.w55c.net/ping_match.gif?st=Krux&rurl=' + prefix + '//beacon.krxd.net/usermatch.gif?partner=dataxu&uid=_wfivefivec_';
+           var i = new Image();
+           i.src = dxu_url;
+        }
+})();
+</script></span><span class="kxtag kxinvisible" data-id="43233" data-alias="Google user match"><script>
+(function(){
+  var kuid = Krux('get', 'user');
+  if (kuid && typeof kuid != 'undefined') {
+      var prefix = location.protocol == 'https:' ? "https:" :"http:";
+      var r_url = prefix + '//cm.g.doubleclick.net/pixel'
+      var kurl = prefix + '//apiservices.krxd.net/um?partner=google&r=' + r_url;
+      var i = new Image();
+      i.src = kurl;
+  }
+})();
+</script></span><span class="kxtag kxinvisible" data-id="43234" data-alias="Rocket Fuel"><script>
+(function() {
+    var i = new Image();
+    i.src = '//p.rfihub.com/cm?in=1&pub=6919';
+})();
+
+</script></span><span class="kxtag kxinvisible" data-id="39526" data-alias="Madison Logic provider tag"><script>
+
+(function () {
+_ml = window._ml || {};
+_ml.pub = '748';
+_ml.redirect = '//beacon.krxd.net/usermatch.gif?partner=madisonlogic&partner_uid=[PersonID]';
+var s = document.getElementsByTagName('script')[0], cd = new Date(), mltag = document.createElement('script');
+mltag.type = 'text/javascript'; mltag.async = true;
+mltag.src = '//ml314.com/tag.aspx?' + cd.getDate() + cd.getMonth() + cd.getFullYear();
+s.parentNode.insertBefore(mltag, s);
+})();
+
+</script></span><span class="kxtag kxinvisible" data-id="38587" data-alias="Krux Track Social"><script type="text/javascript">Krux('social.init');</script></span><span class="kxtag kxinvisible" data-id="38588" data-alias="Technographic Data provider tag"><script>
+// this tag is intentionally blank
+</script></span><span class="kxtag kxinvisible" data-id="38589" data-alias="Krux Geographic Data provider tag"></span><span class="kxtag kxinvisible" data-id="38591" data-alias="AdAdvisor S2S provider tag"><img src="./Introduction to CSS Media Queries_files/g.js"></span><span class="kxtag kxinvisible" data-id="38592" data-alias="Acxiom S2S provider tag"><script>
+(function(){
+  var kuid = Krux('get', 'user');
+  if (kuid) {
+      var liveramp_url = 'https://idsync.rlcdn.com/379708.gif?partner_uid=' + kuid;
+      var i = new Image();
+      i.src = liveramp_url;      
+  }
+})();
+</script></span><span class="kxtag kxinvisible" data-id="38593" data-alias="DataLogix provider tag"><script>
+    (function() {
+        var kuid = Krux('get', 'user');
+        if (kuid) {
+            var prefix = location.protocol == 'https:' ? "https:" : "http:";
+            var kurl_params = encodeURIComponent("_kuid=" + kuid + "&_kdpid=2dd640a6-6ebd-4d4f-af30-af8baa441a0d&dlxid=<na_id>&dlxdata=<na_da>");
+            var kurl = prefix + "//beacon.krxd.net/data.gif?" + kurl_params;
+            var dlx_url = '//r.nexac.com/e/getdata.xgi?dt=br&pkey=gpwn29rvapq62&ru=' + kurl;
+            var i = new Image();
+            i.src = dlx_url;
+        }
+    })();
+</script></span><span class="kxtag kxinvisible" data-id="38595" data-alias="eXelate Media provider tag"><script>
+(function(){
+  var kuid = Krux('get', 'user');
+  if (kuid) {
+    Krux('require:http').pixel({
+      url: "//loadm.exelator.com/load",
+      data: {
+          _kdpid: 'e4942ff0-4070-4896-a7ef-e6a5a30ce9f9',
+          buid: kuid,
+          p: '204',
+          g: '270',
+          j: '0'
+      }});
+  }
+  })();
+</script></span><span class="kxtag kxinvisible" data-id="59078" data-alias="Dun &amp; Bradstreet provider tag"></span><span class="kxtag kxinvisible" data-id="51749" data-alias="HP_219309_AudienceBuilder"><!-- B2B/ImpTracker -->
+
+<script type="text/javascript">
+  var ord = Math.floor(Math.random() * 1e16);
+  document.write('<script type="text/javascript" src="http://ad.doubleclick.net/N5055/adj/B2B/ImpTracker;sz=1x1;kw=hp219309audiencebuild;ord=' + ord + '?"><\/script>');
+</script><script type="text/javascript" src="./Introduction to CSS Media Queries_files/ImpTracker"></script>
+<noscript></noscript></span><span class="kxtag kxinvisible" data-id="38774" data-alias="DTC"><script>
+
+(function () {
+var user_logged_in = "dn";
+if(document.cookie.indexOf(user_logged_in) != -1){ 
+
+	Krux('set', { "user_attr_logged_in" : "yes" });
+	}
+
+
+// keywords
+Krux('scrape', { "page_attr_keywords" : {meta_name: 'keywords'} }) ; 
+// url_path
+Krux('scrape', { "page_attr_url_path_1" : {url_path: 1} }) ;
+Krux('scrape', { "page_attr_url_path_2" : {url_path: 2} }) ;
+Krux('scrape', { "page_attr_url_path_3" : {url_path: 3} }) ;
+  
+Krux('scrape', { "page_attr_domain": {url_domain: 2 } }) ;
+
+// cookies
+Krux('scrape', { 
+			user_attr_dn: {cookie: 'dn'},
+			user_attr_dr: {cookie: 'dr'},
+			user_attr_ir: {cookie: 'ir'},
+			user_attr_jf: {cookie: 'jf'},
+			user_attr_noer: {cookie: 'noer'}
+	} );
+
+})();
+</script></span><span class="kxtag kxinvisible" data-id="64806" data-alias="Test LiveRamp User Matching"><script>
+(function(){
+  var kuid = Krux('get', 'user');
+  if (kuid) {
+      var liveramp_url = 'https://idsync.rlcdn.com/379708.gif?partner_uid=' + kuid;
+      var i = new Image();
+      i.src = liveramp_url;     
+  }
+})();
+</script></span><span class="kxtag kxinvisible" data-id="64807" data-alias="Test Yahoo! DataX"><script>
+(function(){
+    var kuid = Krux('get', 'user');
+        if (kuid) {
+            var prefix = 'https:';
+            var rurl = prefix + '//cms.analytics.yahoo.com/cms?partner_id=KRUX';
+            var i = new Image();
+            i.src = rurl;
+        }
+})();
+</script></span></div><div id="itxtmobtholder" class="" style="position: absolute; left: 0px; top: 0px;"></div><iframe id="google_osd_static_frame_4026408696081" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

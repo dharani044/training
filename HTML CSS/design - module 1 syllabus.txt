@@ -1,0 +1,12 @@
+Module Test 1 syllabus
+
+
+Introduction HTML & HTML5
+Introduction CSS
+CSS3
+CSS3 Responsive&media queries
+Layout creation
+PSD to HTML Conversion
+Bootstrap Introduction
+Bootstrap Grids / Layout creation
+HTML Forms

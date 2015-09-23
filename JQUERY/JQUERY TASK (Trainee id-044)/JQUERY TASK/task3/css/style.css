@@ -1,0 +1,42 @@
+*
+{
+	margin: 0 auto;
+	text-decoration: none;
+	font-family: Arial;
+	font-style: italic;
+}
+body
+{
+	width: 500px;
+	height: auto;
+	background-color: teal;
+	margin-top: 50px;
+	border: 2px solid white;
+	padding:10px;
+}
+span
+{	
+	width: 100%;
+	color: white;
+	text-align: center;
+	/*box-shadow: 2px 2px 2.5px white;*/
+}
+.div1,.div2,.div3
+{
+	margin:10px;
+	padding:10px;
+	border:1px solid white;
+	color: white;
+	text-align: justify;
+	letter-spacing: 1px;
+}
+.div1-click
+{
+	border-color:red;
+	border-radius: 8px;
+	border-width: 2px;
+}
+.dec
+{
+	background-color: purple;
+}

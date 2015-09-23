@@ -1,0 +1,19 @@
+$(document).ready(function(){
+	$(".div1").click(function()
+	{
+		$(this).addClass("div1-click");
+	});
+	$(".div2").click(function()
+	{
+		$(this).removeClass("dec");
+	});
+	$(".div3").click(function(){
+		$(this).toggleClass("dec");
+	});
+	$("button").click(function(){
+		$(this).hasClass("b")
+		{
+			alert("hasClass");
+		}
+	});
+});
